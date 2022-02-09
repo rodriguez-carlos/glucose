@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d0ff8bf571fd304c991f0220f2fe9b5, type: 3}
+  m_Name: NewSphereTurretData
+  m_EditorClassIdentifier: 
+  turretRange: 6.53
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  turretAttackPower: 2
+  rotationSpeed: 50
+  bullet: {fileID: 4234380061757275751, guid: 53c48eaa9df246c4c8680ec323c71617, type: 3}
+  shootForce: 16.53
+  timeBetweenShots: 1
+  magSize: 25
