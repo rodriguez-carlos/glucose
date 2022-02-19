@@ -1328,7 +1328,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: -0.3, y: 0.35}
   m_AnchorMax: {x: 1.3, y: 0.65}
-  m_AnchoredPosition: {x: 0.000015258789, y: -7.7999}
+  m_AnchoredPosition: {x: 0, y: -7.7999}
   m_SizeDelta: {x: -94.631, y: 45.1975}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &699745821
@@ -1737,6 +1737,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 358878097, guid: 95e6ef58b90ea9e46a843246af29bd1d, type: 3}
+      propertyPath: flinchAnimation
+      value: 
+      objectReference: {fileID: 7400000, guid: 97cbeab271d1101428940369272ee11a, type: 2}
     - target: {fileID: 7386234923825879168, guid: 95e6ef58b90ea9e46a843246af29bd1d, type: 3}
       propertyPath: m_Name
       value: creature_zombie EASY
@@ -2733,7 +2737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.3490566, g: 0.3490566, b: 0.3490566, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

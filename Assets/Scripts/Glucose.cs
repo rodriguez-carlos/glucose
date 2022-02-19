@@ -10,6 +10,7 @@ public class Glucose : MonoBehaviour
     private float _timer;
     private float enemySpeed;
     private Animator animator;
+    private int glucoseHP;
     private void ChaseAndAttack()
     {
         var vectorEnemyPlayer = target.position - enemyHead.position;
@@ -47,15 +48,29 @@ public class Glucose : MonoBehaviour
         newRotation.z = 0;
         transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, data.rotationSpeed * Time.deltaTime);
     }
+    private void Flinch()
+    {
+        animator.Play("GlucoseHitReaction");
+        animator.Play("Entry");
+    }
+    public void TakeDamage(int damageTaken)
+    {
+        if (damageTaken < glucoseHP)
+            glucoseHP -= damageTaken;
+        else
+            Destroy(gameObject);
+    }
     private void Start()
     {
         target = EnemyManager.instance.playerFollowTarget;
-        animator = GetComponent<Animator>();   
+        animator = GetComponent<Animator>();
+        glucoseHP = data.enemyHP;
 
     }
     private void Update()
     {
         _timer += Time.deltaTime;
         ChaseAndAttack();
+        Debug.Log($"Glucose hp: {glucoseHP}");
     }
 }

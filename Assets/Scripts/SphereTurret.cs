@@ -10,7 +10,6 @@ public class SphereTurret : Turret
     float _firingTimer;
     bool _readyToShoot;
     private GameObject currentTarget;
-    // Start is called before the first frame update
     void Shoot()
     {
         _firingTimer = data.timeBetweenShots;
@@ -50,7 +49,6 @@ public class SphereTurret : Turret
     
     private void OnDrawGizmosSelected()
     {
-        //let's draw the detection sphere
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, data.turretRange);
     }

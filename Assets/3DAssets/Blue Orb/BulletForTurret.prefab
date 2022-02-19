@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3569202312964056285}
   - component: {fileID: 4850770526734255741}
+  - component: {fileID: -8358603647572422925}
+  - component: {fileID: 6027936992520388149}
   m_Layer: 0
   m_Name: BulletForTurret
   m_TagString: Untagged
@@ -48,6 +50,33 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &-8358603647572422925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4234380061757275751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb1adb9fa7fb0464da3f21a0698d735d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: eded2c956dacfb545bc2bbd7fbecdab9, type: 2}
+--- !u!136 &6027936992520388149
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4234380061757275751}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.6532878
+  m_Height: 1.3065757
+  m_Direction: 1
+  m_Center: {x: -0.061154544, y: 0, z: 0}
 --- !u!1 &5138116633879545534
 GameObject:
   m_ObjectHideFlags: 0

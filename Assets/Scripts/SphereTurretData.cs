@@ -6,7 +6,7 @@ public class SphereTurretData : ScriptableObject
 {
     public float turretRange;
     public LayerMask layerMask;
-    public float turretAttackPower;
+    public int turretAttackPower;
     public float rotationSpeed;
     public GameObject bullet;
     public float shootForce;

@@ -50,10 +50,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 print("Talked to Nerve Column");
             }
-            if(hitInfo.collider.gameObject.tag == "InactiveTurret")
+            if (hitInfo.collider.gameObject.tag == "InactiveTurret")
             {
                 print("Activated Receptor Turret");
                 raycastTarget = hitInfo.collider.gameObject;
+                
                 // Aquí quiero suscribir al método "ActivatingTurret" de la Clase Turret
                 
             }
