@@ -63,6 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: eded2c956dacfb545bc2bbd7fbecdab9, type: 2}
+  bulletLifetime: 1.5
 --- !u!136 &6027936992520388149
 CapsuleCollider:
   m_ObjectHideFlags: 0

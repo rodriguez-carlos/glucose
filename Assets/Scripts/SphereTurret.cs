@@ -41,10 +41,13 @@ public class SphereTurret : Turret
     void Update()
     {
         currentTarget = DetectEnemy(data.turretRange, data.layerMask);
-        Quaternion newRotation = Quaternion.LookRotation(currentTarget.transform.position - transform.position);
-        transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, data.rotationSpeed * Time.deltaTime);
-        if (currentTarget != null && _readyToShoot && _bulletsLeft > 0 /*&& gameObject.tag == "ActiveTurret"*/)
-            Shoot();
+        if (currentTarget)
+        {
+            Quaternion newRotation = Quaternion.LookRotation(currentTarget.transform.position - transform.position);
+            transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, data.rotationSpeed * Time.deltaTime);
+            if (_readyToShoot && _bulletsLeft > 0 /*&& gameObject.tag == "ActiveTurret"*/)
+                Shoot();
+        }
     }
     
     private void OnDrawGizmosSelected()

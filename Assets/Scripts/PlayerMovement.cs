@@ -54,7 +54,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 print("Activated Receptor Turret");
                 raycastTarget = hitInfo.collider.gameObject;
-                
                 // Aquí quiero suscribir al método "ActivatingTurret" de la Clase Turret
                 
             }

@@ -7,6 +7,7 @@ public class Turret : MonoBehaviour
     private Collider[] inRange = new Collider[10];
     public event Action OnTurretActivation;
     public event Action OnTurretDeath;
+    Material ActiveTurretMaterial; 
     private int EnemiesInRangeDetection(in float turretRange, in LayerMask layerMask)
     {
         int enemiesInRange = Physics.OverlapSphereNonAlloc(transform.position, turretRange, inRange, layerMask); //detection sphere for every type of turret
@@ -16,7 +17,7 @@ public class Turret : MonoBehaviour
     {
 
         var enemiesInRange = EnemiesInRangeDetection(turretRange, layerMask);
-        if (enemiesInRange == 0) return default;
+        if (enemiesInRange == 0) return null;
         //int i = 0;
         //distancesToEnemies = new List<float>();
         var minDistance = float.MaxValue;
@@ -62,6 +63,8 @@ public class Turret : MonoBehaviour
     public virtual void ActivateTurret()
     {
         gameObject.tag = "ActiveTurret";
+        MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
+        meshRenderer.material = ActiveTurretMaterial;
         OnTurretActivation?.Invoke();
     }
     public virtual void DestroyTurret()
@@ -71,6 +74,8 @@ public class Turret : MonoBehaviour
     }
     void Start()
     {
+        ActiveTurretMaterial = Resources.Load<Material>("activeTurret");
+        ActivateTurret();
         OnTurretActivation += TurretManager.instance.CountTurrets;
         OnTurretDeath += TurretManager.instance.CountTurrets;
     }
