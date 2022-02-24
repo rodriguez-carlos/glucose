@@ -58,7 +58,11 @@ public class Glucose : MonoBehaviour
         if (damageTaken < glucoseHP)
             glucoseHP -= damageTaken;
         else
-            Destroy(gameObject);
+            KillZombie();
+    }
+    private void KillZombie()
+    {
+        Destroy(gameObject);
     }
     private void Start()
     {

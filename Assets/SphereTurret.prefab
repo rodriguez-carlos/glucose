@@ -142,6 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: eded2c956dacfb545bc2bbd7fbecdab9, type: 2}
   turretBarrel: {fileID: 8651068850269786553}
+  gunshotSound: {fileID: 8300000, guid: 9e8ee6e4cfe3a8f48a3ade0690230e39, type: 3}
 --- !u!1 &4967683290990357538
 GameObject:
   m_ObjectHideFlags: 0

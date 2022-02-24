@@ -14,12 +14,16 @@ public class EnemyManager : MonoBehaviour
     public Transform playerFollowTarget;
     Dictionary<string, GameObject> enemyGlucoseTypes = new Dictionary<string, GameObject>();
 
-    private void SpawnEasyGlucose()
+    public void SpawnEasyGlucose()
     {
         foreach (Transform position in enemySpawnPositions)
         {
             var newEnemy = Instantiate(enemyGlucoseTypes["easy"], position.position, Quaternion.identity);
         }
+        CountGlucose();
+    }
+    public void CountGlucose()
+    {
         glucoseCount = GameObject.FindGameObjectsWithTag("Glucose").Length;
     }
     private void Awake()
@@ -36,7 +40,6 @@ public class EnemyManager : MonoBehaviour
         enemyGlucoseTypes.Add("normal", normalGlucose);
         enemyGlucoseTypes.Add("hard", hardGlucose);
         glucoseCount = GameObject.FindGameObjectsWithTag("Glucose").Length;
-        
     }
 
     private void Update()

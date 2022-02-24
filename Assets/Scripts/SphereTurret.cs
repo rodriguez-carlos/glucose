@@ -6,6 +6,8 @@ public class SphereTurret : Turret
 {
     [SerializeField] private SphereTurretData data;
     [SerializeField] private Transform turretBarrel;
+    [SerializeField] private AudioClip gunshotSound;
+    [SerializeField] private ParticleSystem muzzleFlash;
     int _bulletsLeft;
     float _firingTimer;
     bool _readyToShoot;
@@ -17,16 +19,14 @@ public class SphereTurret : Turret
         GameObject newBullet = Instantiate(data.bullet, turretBarrel.position, Quaternion.identity);
         newBullet.transform.forward = directionForBullet.normalized;
         newBullet.GetComponent<Rigidbody>().AddForce(directionForBullet.normalized * data.shootForce, ForceMode.Impulse);
+        AudioSource.PlayClipAtPoint(gunshotSound, transform.position);
+        muzzleFlash.Play();
         _readyToShoot = false;
         _bulletsLeft--;
         if (_bulletsLeft == 0)
         {
             base.DestroyTurret();
         }
-        //if (_firingTimer - Time.deltaTime == 0)
-        //{
-        //    ResetShooting();
-        //}
         Invoke("ResetShooting", data.timeBetweenShots);
     }
     void ResetShooting()

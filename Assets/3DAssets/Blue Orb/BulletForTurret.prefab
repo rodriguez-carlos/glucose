@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4850770526734255741}
   - component: {fileID: -8358603647572422925}
   - component: {fileID: 6027936992520388149}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BulletForTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 4177210311166956933}
   - component: {fileID: 1238280961160293583}
   - component: {fileID: 2308934664661076059}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
