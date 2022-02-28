@@ -8,7 +8,7 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager instance;
 
     [SerializeField] private float maxPlayerHP;
-    public float playerHP;
+    private float playerHP;
     
 
     public void DamagePlayer (float damageOnPlayer)

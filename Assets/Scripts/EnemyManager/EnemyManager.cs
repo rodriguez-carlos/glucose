@@ -25,6 +25,10 @@ public class EnemyManager : MonoBehaviour
     public void CountGlucose()
     {
         glucoseCount = GameObject.FindGameObjectsWithTag("Glucose").Length;
+        if (glucoseCount == 0)
+        {
+            GameManager.instance.LoadNextScene();
+        }
     }
     private void Awake()
     {
@@ -48,5 +52,6 @@ public class EnemyManager : MonoBehaviour
         {
             SpawnEasyGlucose();
         }
+        CountGlucose();
     }
 }

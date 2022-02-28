@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject TopText;
     [SerializeField] private GameObject TurretCounterText;
     [SerializeField] private GameObject DNANoticeText;
+    [SerializeField] private GameObject LevelNoticeText;
     [SerializeField] private float noticePeriod;
     // Start is called before the first frame update
     public void HealthBar(float healthPercentage)
@@ -22,7 +23,7 @@ public class UIManager : MonoBehaviour
     }
     public void TurretCounter()
     {
-        TurretCounterText.SetActive(true);
+        //TurretCounterText.SetActive(true);
         TurretCounterText.GetComponentInChildren<Text>().text = $"Active turrets: ";
     }
     public void DNANotice()
@@ -35,6 +36,15 @@ public class UIManager : MonoBehaviour
     {
         DNANoticeText.SetActive(false);
     }
+    public void LevelNotice()
+    {
+        LevelNoticeText.SetActive(true);
+        Invoke("DeactivateLevelNotice", noticePeriod);
+    }
+    void DeactivateLevelNotice()
+    {
+        LevelNoticeText.SetActive(false);
+    }
     void Start()
     {
         if (instance != null)
@@ -45,7 +55,7 @@ public class UIManager : MonoBehaviour
         {
             instance = this;
         }
-        TurretCounterText.SetActive(false);
+        LevelNotice();
     }
 
     // Update is called once per frame

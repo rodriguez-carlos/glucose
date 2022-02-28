@@ -9,7 +9,14 @@ public class GameManager : MonoBehaviour
     public void LoadFirstScene()
     {
         Scene thisScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(1);
+    }
+
+    public void LoadNextScene()
+    {
+        Scene thisScene = SceneManager.GetActiveScene();
+        int thisSceneIndex = thisScene.buildIndex;
+        SceneManager.LoadScene(thisSceneIndex + 1);
     }
 
     public void QuitGame()

@@ -10,7 +10,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float rotationSpeed = 100.0f;
     [SerializeField] private float interactionRange = 4.0f;
     [SerializeField] private Transform robotHead;
-    [SerializeField] private GameObject raycastTarget;
+    [SerializeField] private AudioClip[] footsteps;
+    private AudioSource audioSource;
+    private GameObject raycastTarget;
     Rigidbody rb;
     private Vector3 jumpVector;
     [SerializeField] private float jumpForce;
@@ -74,8 +76,18 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = false;
         }
     }
+    private AudioClip GetRandomClip()
+    {
+        return footsteps[UnityEngine.Random.Range(0, footsteps.Length)];
+    }
+    private void Step()
+    {
+        AudioClip footstepClip = GetRandomClip();
+        audioSource.PlayOneShot(footstepClip);
+    }
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         animator.applyRootMotion = false;
         rb = GetComponent<Rigidbody>();

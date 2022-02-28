@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7382b7a301e9b694985cc27161fd6445, type: 3}
   m_Name: NewEasyEnemyData
   m_EditorClassIdentifier: 
-  glucoseSpeed: 1
-  glucoseAttackPower: 1
+  glucoseSpeed: 1.2
+  glucoseAttackPower: 10
   attackThreshold: 0.8
   detectionThreshold: 15
   runningThreshold: 7
